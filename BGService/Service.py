@@ -4,6 +4,8 @@ import time
 
 from GLOBAL import *
 from Interface.Window import *
+from infi.systray import SysTrayIcon
+
 
 
 class Service():
@@ -20,14 +22,22 @@ class Service():
             self.queue = []
             Thread(target=self.bg_loop).start()
             Thread(target=self.queue_thread).start()
+            try:
+                menu_options = (("Open GUI", None, self.open_win),)
+                systray = SysTrayIcon("icon.ico", "FBackup", menu_options, on_quit=self.close)
+                systray.start()
+            except:
+                print("Systray could not be started!")
 
         if Global.START_WITH_INTERFACE:
             Window()
 
-        while Global.RUNNING:
-            command = input("--> ")
-            if command.upper() == "GUI":
-                Window()
+
+    def open_win(self, lel=None):
+        Window()
+
+    def close(self, lel=None):
+        Global.RUNNING = False
 
     def bg_loop(self):
         print("Starting BG task")
@@ -58,7 +68,7 @@ class Service():
 
     def queue_thread(self):
         print("Starting Queue thread")
-        while True:
+        while Global.RUNNING:
             self.queue_copy = self.queue.copy()
             for i in self.queue_copy:
                 print(f"Starting queue run for {i.name}")

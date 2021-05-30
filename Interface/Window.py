@@ -17,6 +17,7 @@ class Window(Tk):
         self.title("FBackup")
         self.geometry("700x400")
         self.resizable(True, True)
+        self.iconbitmap("icon.ico")
 
         self.top_bar = Frame(self.main_view)
         self.top_bar.pack(fill=X)
@@ -86,6 +87,7 @@ class Window(Tk):
         for i in Global.backups:
             if i.tab_selected:
                 self.last_selected = i
+                i.running = False
 
 
     def update_backup_list_view(self):
