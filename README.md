@@ -7,7 +7,7 @@
 # Instuctions/Help
 
 ## Quick Start Guide
-###Tips: 
+### Tips: 
 please start the program only once. When you close the gui the Program WONT CLOSE. It will run in the background. You can open the gui back up by rightclicking the Windows System Tray icon "FB" and then press "Open GUI". You can also COMPLEATLY CLOSE the program in the system tray.
  
 ### Creating a new BackupFolder Entry
