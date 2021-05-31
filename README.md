@@ -24,6 +24,7 @@ please start the program only once. When you close the gui the Program WONT CLOS
  
  You can also prevent a backup from beeing made in time by pressing "Pause Timer".  
  You can also start a backup manually ba pressing "Start Manually".  
+ Delete the Backup folder by pressing the "-" in the top left corner
  
 ## Backup Activity indicator
 ![image](https://user-images.githubusercontent.com/68354546/120196856-9f29f080-c220-11eb-8dbd-3e3447db57e7.png)  
