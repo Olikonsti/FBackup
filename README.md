@@ -12,7 +12,7 @@ please start the program only once. When you close the gui the Program WONT CLOS
 
 ### Adding Program to Windows Startup
  Just press "Add to system startup". It will create a .bat file in the "shell:startup" folder.  
- By default FNBackup opens up with a gui at system startup. You can change that by clicking on "Settings" and changing the option "self.START_WITH_INTERFACE" to "False"  
+ By default FNBackup opens up with a gui at system startup. You can change that by clicking on "Settings" and changing the option `self.START_WITH_INTERFACE` to `False`  
  
 ### Creating a new BackupFolder Entry  
  Press the small "+" button in the top left corner.  
