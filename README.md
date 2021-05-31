@@ -34,5 +34,5 @@ please start the program only once. When you close the gui the Program WONT CLOS
  
 ## Backup Advanced Options
 ![image](https://user-images.githubusercontent.com/68354546/120199127-2ed09e80-c223-11eb-9021-65d6b4543810.png)  
- `self.self.keep_second_last = True/False` always keep 2 Backups if one gets overritten by already corrupted data; Default: True  
+ `self.keep_second_last = True/False` always keep 2 Backups if one gets overritten by already corrupted data; Default: True  
 
