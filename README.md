@@ -33,5 +33,6 @@ please start the program only once. When you close the gui the Program WONT CLOS
  Green: Backup is currently beeing made! Please dont start it again manually! You can start other Backups manually  
  
 ## Backup Advanced Options
-![image](https://user-images.githubusercontent.com/68354546/120199127-2ed09e80-c223-11eb-9021-65d6b4543810.png)
+![image](https://user-images.githubusercontent.com/68354546/120199127-2ed09e80-c223-11eb-9021-65d6b4543810.png)  
+ "self.self.keep_second_last = True/False" always keep 2 Backups if one gets overritten by already corrupted data; Default: True  
 
