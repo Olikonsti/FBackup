@@ -24,7 +24,7 @@ class Service():
             Thread(target=self.queue_thread).start()
             try:
                 menu_options = (("Open GUI", None, self.open_win),)
-                systray = SysTrayIcon("icon.ico", "FBackup", menu_options, on_quit=self.close)
+                systray = SysTrayIcon("icon.ico", f"FNBackup - {Global.VERSION}", menu_options, on_quit=self.close)
                 systray.start()
             except:
                 print("Systray could not be started!")

@@ -4,6 +4,8 @@ import time
 from threading import *
 import os
 from tkinter import filedialog
+import getpass
+USER_NAME = getpass.getuser()
 
 
 class GLOBAL():
@@ -13,9 +15,17 @@ class GLOBAL():
         # settings
         self.START_WITH_INTERFACE = True
         self.START_WITH_SERVICE = True
+
+        try:
+            f = open("settings/config.txt", "r")
+            exec(f.read())
+            f.close()
+        except:print("error loading config file")
+
         self.RUNNING = True
 
         # env_vars
+        self.VERSION = 1.1
         self.PATH = os.getcwd()+"\\"
         self.DATA_FOLDER = "DATA/"
 
@@ -33,8 +43,8 @@ class GLOBAL():
         Only works on windows
         """
         print("creating startup task for windows")
-        print(os.system(
-            "cd /d %userprofile%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup & echo start " + self.PATH + "main.exe" + " > FBackup.bat"))
-
+        f = open(f"C:\\Users\\{USER_NAME}\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\FBackup.bat", "w")
+        f.write('cd /d ' + self.PATH + ' & start main.exe')
+        f.close()
 
 Global = GLOBAL()

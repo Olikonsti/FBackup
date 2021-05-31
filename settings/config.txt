@@ -1,0 +1,2 @@
+self.START_WITH_INTERFACE = True
+self.START_WITH_SERVICE = True

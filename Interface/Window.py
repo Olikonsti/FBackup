@@ -14,7 +14,7 @@ class Window(Tk):
         self.main_view = Frame(self)
         self.main_view.pack(expand=True, fill=BOTH)
 
-        self.title("FBackup")
+        self.title(f"FNBackup - {Global.VERSION}")
         self.geometry("700x400")
         self.resizable(True, True)
         self.iconbitmap("icon.ico")
@@ -37,6 +37,9 @@ class Window(Tk):
         self.about_button = ttk.Button(self.top_bar, text="About", command=self.open_about_page)
         self.about_button.pack(side=LEFT)
 
+        self.settings_button = ttk.Button(self.top_bar, text="Settings", command=lambda: os.system("start settings/config.txt"))
+        self.settings_button.pack(side=LEFT)
+
         self.startup_button = ttk.Button(self.top_bar, text="Add to system startup", command=Global.create_startup_task)
         self.startup_button.pack(side=LEFT)
 
@@ -50,15 +53,15 @@ class Window(Tk):
 
     def open_about_page(self):
         self.temp_win = Tk()
-        self.temp_win.title("About FBackup")
+        self.temp_win.title("About FNBackup")
         self.temp_win.resizable(False, False)
 
-        Label(self.temp_win, text="FBackup", font="Consolas 20").pack(pady=(10, 0))
+        Label(self.temp_win, text="FNBackup", font="Consolas 20").pack(pady=(10, 0))
 
         self.about_frame = Frame(self.temp_win); self.about_frame.pack(padx=10, pady=10)
 
         Label(self.about_frame, text="Developer: Konstantin Ehmann").pack(anchor=W)
-        Label(self.about_frame, text="Version: 1.0").pack(anchor=W)
+        Label(self.about_frame, text=f"Version: {Global.VERSION}").pack(anchor=W)
         Label(self.about_frame, text="Instruction on how to use: https://ksite.ddns.net").pack(anchor=W)
 
     def update_tasks(self):
