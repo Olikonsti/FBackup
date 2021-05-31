@@ -90,7 +90,6 @@ class Window(Tk):
         for i in Global.backups:
             if i.tab_selected:
                 self.last_selected = i
-                i.running = False
 
 
     def update_backup_list_view(self):

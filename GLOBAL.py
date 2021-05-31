@@ -4,8 +4,7 @@ import time
 from threading import *
 import os
 from tkinter import filedialog
-import getpass
-USER_NAME = getpass.getuser()
+
 
 
 class GLOBAL():
@@ -42,6 +41,9 @@ class GLOBAL():
         """
         Only works on windows
         """
+
+        exec("global USER_NAME; import getpass; USER_NAME = getpass.getuser()")
+
         print("creating startup task for windows")
         f = open(f"C:\\Users\\{USER_NAME}\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\FBackup.bat", "w")
         f.write('cd /d ' + self.PATH + ' & start main.exe')

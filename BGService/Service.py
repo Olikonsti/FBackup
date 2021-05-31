@@ -44,6 +44,7 @@ class Service():
 
         for i in Global.backups:
             i.already_ran = False
+            i.running = False
 
         while Global.RUNNING:
             now = datetime.datetime.now()
