@@ -9,6 +9,10 @@
 ## Quick Start Guide
 ### Tips: 
 please start the program only once. When you close the gui the Program WONT CLOSE. It will run in the background. You can open the gui back up by rightclicking the Windows System Tray icon "FB" and then press "Open GUI". You can also COMPLEATLY CLOSE the program in the system tray.
+
+### Adding Program to Windows Startup
+ Just press "Add to system startup". It will create a .bat file in the "shell:startup" folder.  
+ By default FNBackup opens up with a gui at system startup. You can change that by clicking on "setting" and changing the option "self.START_WITH_INTERFACE" to "False"  
  
 ### Creating a new BackupFolder Entry
 
