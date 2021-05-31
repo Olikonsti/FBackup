@@ -6,6 +6,9 @@
 
 # Instuctions/Help
 
+## Quick Start Guide
+ Tips: please start the program only once. When you close the gui the Program WONT CLOSE. It will run in the background. You can open the gui back up by rightclicking the Windows System Tray icon "FB" and then press "Open GUI". You can also COMPLEATLY CLOSE the program in the system tray.
+
 ## Backup Activity indicator
 ![image](https://user-images.githubusercontent.com/68354546/120196856-9f29f080-c220-11eb-8dbd-3e3447db57e7.png)  
  Orange: Waiting for correct time to start making the Backup  
