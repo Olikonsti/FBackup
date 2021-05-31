@@ -24,7 +24,7 @@ class GLOBAL():
         self.RUNNING = True
 
         # env_vars
-        self.VERSION = 1.1
+        self.VERSION = 1.2
         self.PATH = os.getcwd()+"\\"
         self.DATA_FOLDER = "DATA/"
 

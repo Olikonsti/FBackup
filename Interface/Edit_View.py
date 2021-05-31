@@ -5,9 +5,9 @@ from GLOBAL import *
 import tkinter.ttk as ttk
 import pickle
 
-class Edit_View(Frame):
+class Edit_View(LabelFrame):
     def __init__(self, parent, instance, window):
-        super(Edit_View, self).__init__(parent)
+        super(Edit_View, self).__init__(parent, text="Edit")
         self.instance = instance
         self.window = window
 
@@ -72,8 +72,6 @@ class Edit_View(Frame):
         self.run_attrs.pack(anchor=W, side=BOTTOM)
         self.run_entry = ttk.Entry(self.run_attrs, width=30)
         self.run_entry.pack(side=LEFT)
-        self.command_list = ttk.Button(self.run_attrs, text="Command List", command=self.cmd_list)
-        self.command_list.pack(side=RIGHT)
         self.run_button = ttk.Button(self.run_attrs, text="Run", command=lambda: self.instance.exec_code(self.run_entry.get()))
         self.run_button.pack(side=RIGHT)
 
