@@ -14,8 +14,17 @@ please start the program only once. When you close the gui the Program WONT CLOS
  Just press "Add to system startup". It will create a .bat file in the "shell:startup" folder.  
  By default FNBackup opens up with a gui at system startup. You can change that by clicking on "Settings" and changing the option "self.START_WITH_INTERFACE" to "False"  
  
-### Creating a new BackupFolder Entry
-
+### Creating a new BackupFolder Entry  
+ Press the small "+" button in the top left corner.  
+ You can change the Name of the backup directory by typing in the top entry box.  
+ Now select a source and destination directory.  
+ Select a time and a weekday.  
+ 
+ PRESS ON SAVE!  
+ 
+ You can also prevent a backup from beeing made in time by pressing "Pause Timer".  
+ You can also start a backup manually ba pressing "Start Manually".  
+ 
 ## Backup Activity indicator
 ![image](https://user-images.githubusercontent.com/68354546/120196856-9f29f080-c220-11eb-8dbd-3e3447db57e7.png)  
  Orange: Waiting for correct time to start making the Backup  
