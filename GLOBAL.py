@@ -1,3 +1,4 @@
+import pickle
 from tkinter import *
 import tkinter.ttk as ttk
 import time
@@ -15,11 +16,12 @@ class GLOBAL():
         self.START_WITH_INTERFACE = True
         self.START_WITH_SERVICE = True
 
+        # saving Interface start option
         try:
-            f = open("settings/config.txt", "r")
-            exec(f.read())
+            f = open(f"{Global.DATA_FOLDER}settings/START_WITH_INTERFACE.txt", "wb")
+            pickle.dump(self.START_WITH_INTERFACE, f)
             f.close()
-        except:print("error loading config file")
+        except:print("error loading config file!")
 
         self.RUNNING = True
 

@@ -3,6 +3,7 @@ from VerticalScrolledFrame import *
 from Backup import *
 from Interface.Edit_View import *
 import os
+from Interface.Settings import *
 
 class Window(Tk):
     def __init__(self):
@@ -17,7 +18,9 @@ class Window(Tk):
         self.title(f"FNBackup - {Global.VERSION}")
         self.geometry("700x400")
         self.resizable(True, True)
-        self.iconbitmap("icon.ico")
+        try:
+            self.iconbitmap(f"{Global.DATA_FOLDER}icon.ico")
+        except:pass
 
         self.top_bar = Frame(self.main_view)
         self.top_bar.pack(fill=X)
@@ -37,7 +40,7 @@ class Window(Tk):
         self.about_button = ttk.Button(self.top_bar, text="About", command=self.open_about_page)
         self.about_button.pack(side=LEFT)
 
-        self.settings_button = ttk.Button(self.top_bar, text="Settings", command=lambda: os.system("start settings/config.txt"))
+        self.settings_button = ttk.Button(self.top_bar, text="Settings", command=Settings)
         self.settings_button.pack(side=LEFT)
 
         self.startup_button = ttk.Button(self.top_bar, text="Add to system startup", command=Global.create_startup_task)

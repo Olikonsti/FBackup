@@ -4,14 +4,17 @@ import time
 
 from GLOBAL import *
 from Interface.Window import *
-from infi.systray import SysTrayIcon
+try:
+    from infi.systray import SysTrayIcon
+except:
+    pass
 
 
 
 class Service():
     def __init__(self):
         try:
-            f = open("backups.dump", "rb")
+            f = open(f"{Global.DATA_FOLDER}backups.dump", "rb")
             Global.backups = pickle.load(f)
             f.close()
         except:
@@ -24,7 +27,7 @@ class Service():
             Thread(target=self.queue_thread).start()
             try:
                 menu_options = (("Open GUI", None, self.open_win),)
-                systray = SysTrayIcon("icon.ico", f"FNBackup - {Global.VERSION}", menu_options, on_quit=self.close)
+                systray = SysTrayIcon(f"{Global.DATA_FOLDER}icon.ico", f"FNBackup - {Global.VERSION}", menu_options, on_quit=self.close)
                 systray.start()
             except:
                 print("Systray could not be started!")
@@ -63,7 +66,7 @@ class Service():
                     print(f"Reset Backup.already_ran for '{i.name}'")
 
             time.sleep(5)
-            f = open("backups.dump", "wb")
+            f = open(f"{Global.DATA_FOLDER}backups.dump", "wb")
             pickle.dump(Global.backups, f)
             f.close()
 
